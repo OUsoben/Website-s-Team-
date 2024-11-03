@@ -8,6 +8,7 @@ const BlogPage = () => {
     
         <button className='btn btn-danger'>Sign up</button>
         <p className='text-warning border-primary'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Numquam aperiam assumenda suscipit facilis dolore! Dicta ullam saepe ab id ea aperiam expedita, vitae eos, doloribus quasi facilis quia illum ratione?</p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Molestiae, dolore praesentium. Asperiores ipsa inventore architecto voluptatibus in excepturi esse eum. Blanditiis at dolor nulla sint recusandae nostrum adipisci culpa quod.</p>
     </>
   )
 }
