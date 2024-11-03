@@ -1,24 +1,48 @@
-import logo from './logo.svg';
 import './App.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import ResponsiveNavbar from './components/ResponsiveNavbar';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import HomePage from './pages/HomePage';
+import BlogPage from './pages/BlogPage';
+import CustomerServicePage from './pages/CustomerServicePage';
+import CategoryPage from './pages/CategoryPage';
+import DashboardPage from './pages/DashboardPage';
+import AboutUsPage from './pages/AboutUsPage';
+import SignInPage from './pages/SignInPage';
+import SignUpPage from './pages/SignUpPage';
+import ContactPage from './pages/ContactPage';
+import PrivacyPolicyPage from './pages/PrivacyPolicyPage';
+import TermsConditionsPage from './pages/TermsConditionsPage';
+import NotFoundPage from './pages/NotFoundPage';
+import Header from './components/Header';
+import Footer from './components/Footer';
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+   <>
+     
+        <BrowserRouter >
+           <Header/>
+        <ResponsiveNavbar/>
+           <Routes>
+              <Route path='/' index element={<HomePage/>}/>
+              <Route path='/blogs' element={<BlogPage/>}/>
+              <Route path='/services' element={<CustomerServicePage/>}/>
+              <Route path='/categories' element={<CategoryPage/>}/>
+              <Route path='/dashboard' element={<DashboardPage/>}/>
+              <Route path='/aboutus' element={<AboutUsPage/>}/>
+              <Route path='/signin' element={<SignInPage/>}/>
+              <Route path='/signup' element={<SignUpPage/>}/>
+              <Route path='/contactus' element={<ContactPage/>}/>
+              <Route path='/privacypolicy' element={<PrivacyPolicyPage/>}/>
+              <Route path='/termsconditions' element={<TermsConditionsPage/>}/>
+              <Route path='*' element={<NotFoundPage/>}/>
+           </Routes>
+            <Footer />
+        </BrowserRouter>
+   </>
   );
 }
 

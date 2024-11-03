@@ -1,0 +1,42 @@
+.navbar-toggler {
+    border: none;
+}
+.navbar-toggler-icon{
+    font-size: small;
+    font-weight: bold;
+    background-color: #fff;
+    color: white;
+}
+btn-close{
+    color: white;
+}
+.navbar-toggler:focus,
+.navbar-toggler:active,
+.navbar-toggler-icon:focus {
+    outline: none;
+    box-shadow: none;
+}
+*{
+    font-family: "Montserrat", sans-serif;
+}
+/* Default styles for Navbar */
+.navbar {
+    font-family: DM Sans, sans-serif;
+    background-color: #2B1DF0 ; /* Primary blue color */
+  }
+  @media (max-width: 990px) {
+    .navbar-dark {
+      background-color: white !important; /* Dark background */
+    }
+    
+    .navbar-dark .nav-link {
+      color: black !important; /* Light text */
+    }
+  }
+  
+  .nav-link{
+    color: white;
+  }
+  .bg-hover:hover {
+      background-color: #433878;
+  }
