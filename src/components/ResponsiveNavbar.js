@@ -23,7 +23,7 @@ const ResponsiveNavbar = () => {
               <Offcanvas.Title className='' id="offcanvasNavbarLabel">CamboShop</Offcanvas.Title>
             </Offcanvas.Header>
             <Offcanvas.Body>
-              <Nav className="col-11 mx-xl-auto  ">
+              <Nav className="col-11 mx-xl-auto">
                 {/* Primary Navigation Links */}
                 <NavLink className=" text-white nav-link   px-4 py-3 ">
                   <FontAwesomeIcon className='pe-3' icon={faBars} />
