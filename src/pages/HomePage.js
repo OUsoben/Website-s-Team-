@@ -5,7 +5,8 @@ import "../styles/HomeStyle.css"
 const HomePage = () => {
   return (
     <>
-      <h1>HomePage</h1>
+      <section className='row'>
+      </section>
     </>
   )
 }
