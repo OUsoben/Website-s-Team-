@@ -10,5 +10,16 @@
     font-size: 16px; /* Adjust font size */
     
   }
-  
+  .cambo-font{
+    font-family: "Roboto Slab", serif;
+    font-size: 25px;
+  }
+  .side-left-font{
+    font-size: 16px;
+    font-family: "Oswald", sans-serif;
+    
+  }
+  .click-cursor{
+    cursor: pointer;
+  }
   

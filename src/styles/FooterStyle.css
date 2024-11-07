@@ -1,3 +1,42 @@
-.bg-blue{
-    background-color: #2B1DF0;
+.bg-blue {
+  background-color: #2B1DF0;
+}
+
+.cambo-font {
+  font-family: "Roboto Slab", serif;
+  font-size: 25px;
+}
+
+.des-font {
+  font-weight: normal;
+  font-family: "Nunito Sans", sans-serif;
+  font-size: 15px;
+  font-optical-sizing: auto;
+  font-style: normal;
+
+}
+
+.image-container {
+  border-radius: 2px;
+ 
+  display: flex;
+  background-color: white;
+  justify-content: center;
+  /* Centers the image horizontally */
+  align-items: center;
+  /* Centers the image vertically */
+  width: 60px;
+  /* Set the desired width */
+  height: 28px;
+  /* Set the desired height */
+}
+
+.image-container img {
+  max-width: 50px;
+  max-height: 100%;
+}
+.font-top{
+  font-size: 15px;
+  font-family: "Roboto", sans-serif;
+  font-weight: 550;
 }
