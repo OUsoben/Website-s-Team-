@@ -1,13 +1,12 @@
 *{
     font-family: "Montserrat", sans-serif;
 }
-<<<<<<< HEAD
 .font-style{
       font-family: "Open Sans", sans-serif;
 }
 .hover-home:hover{
     text-decoration: underline;
-=======
+}
 .style-text{
   padding: 10px;
   border: 2px solid black;
@@ -17,5 +16,4 @@
     background-color: yellow;
     border-radius: 20px;
     margin: 10px;
->>>>>>> origin/team
 }
