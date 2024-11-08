@@ -20,30 +20,30 @@ import Footer from './components/Footer';
 
 
 function App() {
-  return (
-   <>
-     
-        <BrowserRouter >
-           <Header/>
-        <ResponsiveNavbar/>
-           <Routes>
-              <Route path='/' index element={<HomePage/>}/>
-              <Route path='/blogs' element={<BlogPage/>}/>
-              <Route path='/services' element={<CustomerServicePage/>}/>
-              <Route path='/categories' element={<CategoryPage/>}/>
-              <Route path='/dashboard' element={<DashboardPage/>}/>
-              <Route path='/aboutus' element={<AboutUsPage/>}/>
-              <Route path='/signin' element={<SignInPage/>}/>
-              <Route path='/signup' element={<SignUpPage/>}/>
-              <Route path='/contactus' element={<ContactPage/>}/>
-              <Route path='/privacypolicy' element={<PrivacyPolicyPage/>}/>
-              <Route path='/termsconditions' element={<TermsConditionsPage/>}/>
-              <Route path='*' element={<NotFoundPage/>}/>
-           </Routes>
+   return (
+      <>
+
+         <BrowserRouter >
+            <Header />
+            <ResponsiveNavbar />
+            <Routes>
+               <Route path="/" index element={<HomePage />} />
+               <Route path='/blogs' element={<BlogPage />} />
+               <Route path='/services' element={<CustomerServicePage />} />
+               <Route path='/categories' element={<CategoryPage />} />
+               <Route path='/dashboard' element={<DashboardPage />} />
+               <Route path='/aboutus' element={<AboutUsPage />} />
+               <Route path='/signin' element={<SignInPage />} />
+               <Route path='/signup' element={<SignUpPage />} />
+               <Route path='/contactus' element={<ContactPage />} />
+               <Route path='/privacypolicy' element={<PrivacyPolicyPage />} />
+               <Route path='/termsconditions' element={<TermsConditionsPage />} />
+               <Route path='*' element={<NotFoundPage />} />
+            </Routes>
             <Footer />
-        </BrowserRouter>
-   </>
-  );
+         </BrowserRouter>
+      </>
+   );
 }
 
 export default App;
