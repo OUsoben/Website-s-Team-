@@ -40,6 +40,54 @@ const BlogPage = () => {
               <div className='p-2'>category</div>
             </div>
           </div>
+          <div className='d-flex flex-row mb-2'>
+            <div className='d-flex flex-column mb-3 p-2'>
+              <img class="img-fluid" src="https://woocommerce.com/wp-content/uploads/2024/09/blog-hero-Business-Models@2x.jpg" alt="Woman, am I right?" />
+              <div className='p-2'>caption</div>
+              <div className='p-2'>date</div>
+              <div className='p-2'>category</div>
+            </div>
+            <div className='d-flex flex-column mb-3 p-2'>
+              <img class="img-fluid" src="https://woocommerce.com/wp-content/uploads/2024/09/blog-hero-Business-Models@2x.jpg" alt="Woman, am I right?" />
+              <div className='p-2'>caption</div>
+              <div className='p-2'>date</div>
+              <div className='p-2'>category</div>
+            </div>
+            <div className='d-flex flex-column mb-3 p-2'>
+              <img class="img-fluid" src="https://woocommerce.com/wp-content/uploads/2024/09/blog-hero-Business-Models@2x.jpg" alt="Woman, am I right?" />
+              <div className='p-2'>caption</div>
+              <div className='p-2'>date</div>
+              <div className='p-2'>category</div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+                <div class="col-12 col-sm-6 col-md-4 mb-3">
+                    <div class="d-flex flex-column p-2">
+                        <img class="img-fluid" src="https://woocommerce.com/wp-content/uploads/2024/09/blog-hero-Business-Models@2x.jpg" alt="Woman, am I right?" />
+                        <div class="p-2">caption</div>
+                        <div class="p-2">date</div>
+                        <div class="p-2">category</div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 mb-3">
+                    <div class="d-flex flex-column p-2">
+                        <img class="img-fluid" src="https://woocommerce.com/wp-content/uploads/2024/09/blog-hero-Business-Models@2x.jpg" alt="Woman, am I right?" />
+                        <div class="p-2">caption</div>
+                        <div class="p-2">date</div>
+                        <div class="p-2">category</div>
+                    </div>
+                </div>
+                <div class="col-12 col-sm-6 col-md-4 mb-3">
+                    <div class="d-flex flex-column p-2">
+                        <img class="img-fluid" src="https://woocommerce.com/wp-content/uploads/2024/09/blog-hero-Business-Models@2x.jpg" alt="Woman, am I right?" />
+                        <div class="p-2">caption</div>
+                        <div class="p-2">date</div>
+                        <div class="p-2">category</div>
+                    </div>
+                </div>
+            </div>
+        </div>
         </div>
       </section>
         <button className='btn btn-danger'>Sign up</button>
