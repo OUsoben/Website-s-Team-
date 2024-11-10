@@ -14,7 +14,7 @@ const Header = () => {
         <div className='d-none d-md-block pb-2'>
             <section className='row my-2 me-1 '>
                 <div className="col-xxl-2 col-xl-2 col-lg-2 col-3 ">
-                    <h4 className='pt-3 ps-xl-5   text-center  cambo-font'>Camboshop</h4>
+                    <h4 className='pt-3 ps-xl-5   text-center  sour-gummy'>Camboshop</h4>
                 </div>
                 <div class=" col-xxl-8 col-xl-7 mt-2 col-lg-7 col-5">
                     <input
