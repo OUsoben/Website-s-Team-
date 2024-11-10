@@ -10,13 +10,9 @@
     font-size: 16px; /* Adjust font size */
     
   }
-  .sour-gummy {
-    font-family: "Sour Gummy", sans-serif;
-    font-optical-sizing: auto;
-
-    font-style: normal;
-    font-variation-settings:
-      "wdth" 100;
+  .cambo-font{
+    font-family: "Doto", sans-serif;  
+    font-size: 25px;
   }
   .side-left-font{
     font-size: 16px;

@@ -93,7 +93,7 @@ const HomePage = () => {
               alt="Women's Sport Products"
               className="img-fluid"
             />
-           
+           <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea voluptatibus, impedit ipsam aperiam aspernatur voluptates nobis dolorem quaerat tempore deleniti suscipit reiciendis ut temporibus iste quas? Cumque vero architecto fuga!</p>
           </div>
         </div>
       </div>
