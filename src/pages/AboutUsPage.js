@@ -17,6 +17,7 @@ const AboutUsPage = () => {
            }}
          >Home</p> <p><FontAwesomeIcon style={{width:"30px"}} className=' font-style text-muted'  icon={faAngleRight} /> About Us</p>
       </section>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Reiciendis cum doloremque dignissimos magnam illum culpa ratione ipsum odio repellat soluta, nesciunt, porro saepe quasi deleniti velit nulla, numquam minima. Dolor.</p>
     </>
   )
 }

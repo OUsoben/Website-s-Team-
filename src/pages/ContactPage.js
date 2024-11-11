@@ -17,6 +17,7 @@ const ContactPage = () => {
            }}
          >Home</p> <p><FontAwesomeIcon style={{width:"30px"}} className=' font-style text-muted'  icon={faAngleRight} /> Contact Us</p>
       </section>
+    
     </>
   )
 }
