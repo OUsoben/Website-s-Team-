@@ -1,6 +1,6 @@
 import React from 'react';
 import '../styles/HomeStyle.css';
-import { faArrowRight } from '@fortawesome/free-solid-svg-icons';
+import { faArrowRight, faStar } from '@fortawesome/free-solid-svg-icons';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 
@@ -81,11 +81,65 @@ const HomePage = () => {
     {
       image: "https://cam-do.com/cdn/shop/products/camera-gopro-hero5-black-1_96e6e60c-61ed-4e5d-aa49-34511f8d8320_600x.jpg?v=1613543650", title: "GoPro "
     },
-    // Add more brands as needed
+  ];
+  const bestSellerList = [
+    {
+      image: "https://images.thdstatic.com/productImages/bf511101-c41b-483f-9d48-058ab076488e/svn/scott-toilet-paper-10060-64_600.jpg",
+      title: " paper",
+      price: 10.2,
+      description: "A classic paper that is perfect for drawing, sketching, or just as a fun toy.",
+      id : "1002",
+      rating : 2
+    },
+    {
+      image:"https://www.myperfectcolor.com/repositories/images/assets/general/custom-spray-paint-min.png",
+      title: "Custom Spray Paint",
+      price: 5.99,
+      description: "Customize your spray paint with your favorite colors and patterns.",
+      id : "1003",
+      rating : 5
+    },
+    {
+      image:"https://m.media-amazon.com/images/I/71zjBoiPL+L.jpg",
+      title: "Gamming table",
+      price: 129.99,
+      description: "A stylish and versatile gaming table that is perfect for playing games.",
+      id : "1004",
+      rating : 4
+    },
+    {
+      image:"https://m.media-amazon.com/images/I/61UDx9jF0mL._AC_SL1315_.jpg",
+      title :"bags",
+      price: 100.99,
+      description: "A stylish and versatile bags that is perfect for shopping.",
+      id : "1005",
+      rating : 5
+      
+    },
+    {
+      image:"https://i5.walmartimages.com/asr/dda6bc1f-d282-4cf9-ad29-e827222bc4d5.8d402328f4d54e2b9a252879ec51fb79.jpeg",
+      title: "Apple Watch",
+      price: 139.99,
+      description: "A stylish and versatile Apple Watch that is perfect for wearing.",
+      id : "1006",
+      rating : 4
+    },
+    {
+      image:"https://m.media-amazon.com/images/I/516y3sp4otL._SL1500_.jpg",
+      title :"Cream",
+      price: 6.99,
+      description: "A cream that is perfect for baking, making pastries, ",
+      id : "1007",
+      rating : 5
+    }
+    
+
+
   ];
   return (
-    <>
-      <section className="px-md-5 mt-xl-5 px-2 ">
+    <div className='py-5'>
+      <section className="px-md-5  px-2 ">
+
         <div className="row g-3 ">
           <div className="col-lg-12 col-xxl-9 ">
             <div style={{ height: "686px" }} className="bg-white rounded d-flex flex-column flex-lg-row justify-content-around p-xl-5">
@@ -193,8 +247,8 @@ const HomePage = () => {
       </section>
       {/* exlpore brand */}
       <section className='px-md-5 pt-2 px-2 '>
-        <div className='bg-white'>
-          <div className='d-flex justify-content-between  px-4 pt-4'>
+        <div style={{ borderRadius: '5px' }} className='bg-white'>
+          <div className='d-flex justify-content-between  px-xl-4 px-2 pt-4'>
             <h4>Explore Popular Brands</h4>
             <a className='text-muted' href="#">See all</a>
           </div>
@@ -202,7 +256,7 @@ const HomePage = () => {
           <div className='scroll-container'>
             {
               exploreBrandList.map((product, index) => (
-                <div key={index} className=''>
+                <div style={{ cursor: "pointer" }} key={index} className=''>
                   <div className='item-container'>
                     <img className='img-fluid' src={product.image} alt={product.title} />
                     <p>{product.title}</p>
@@ -213,18 +267,54 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-      <section className='px-md-5 pt-2 px-2 '>
-        <div className='bg-white'>
-          <div className='d-flex justify-content-between  px-4 pt-4'>
-            <h4>Explore Popular categories</h4>
+      <section className='px-md-5 pt-3 px-2'>
+  <div style={{ borderRadius: '5px' }} className='bg-white'>
+    <div className='d-flex justify-content-between px-xl-4 px-2 pt-4'>
+      <h4>Best Seller in the Month</h4>
+      <div>
+        <a className='text-muted d-none d-md-inline' href="#">Categories</a>
+        <a className='text-muted text-decoration-none px-3 d-none d-md-inline' href="#">Toys</a>
+        <a className='text-muted text-decoration-none px-3 d-none d-md-inline' href="#">Sports</a>
+        <a className='text-muted text-decoration-none px-3 d-none d-md-inline' href="#">Electronics</a>
+        <a className='text-muted text-decoration-none ps-2' href="#">All</a>
+      </div>
+    </div>
+    <hr />
+    <div className='d-flex flex-wrap justify-content-between'>
+      {bestSellerList.map((product, index) => (
+        <div style={{ cursor: "pointer" }} key={index} className='col-6 col-md-4 col-lg-2 mb-4'>
+          <div className='px-xl-4 px-2'>
+            <img className='img-fluid' src={product.image} alt={product.title} />
+            <p className='text-truncate-2'>{product.title}</p>
+            <p className='text-muted text-truncate-2'>{product.description}</p>
+            <div className='d-flex'>
+              {[...Array(product.rating)].map((_, index) => (
+                <FontAwesomeIcon key={index} className='text-warning' icon={faStar} />
+              ))}
+              <p className='text-primary'>{product.id}</p>
+            </div>
+            <p className='fw-bold mt-1'>${Number(product.price).toFixed(2)}</p>
+          </div>
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+
+      {/* exlpore category */}
+      <section className='px-md-5 pt-3 px-2 '>
+        <div style={{ borderRadius: '5px' }} className='bg-white'>
+          <div className='d-flex justify-content-between  px-xl-4 px-2 pt-4'>
+            <h4>Explore Popular Categories</h4>
             <a className='text-muted' href="#">See all</a>
           </div>
           <hr />
           <div className='scroll-container'>
             {
               exploreCategorieList.map((product, index) => (
-                <div key={index} className=''>
-                  <div className='item-container'>
+                <div style={{ cursor: "pointer" }} key={index} className=''>
+                  <div className='item-container '>
                     <img className='img-fluid' src={product.image} alt={product.title} />
                     <p>{product.title}</p>
                   </div>
@@ -234,7 +324,7 @@ const HomePage = () => {
           </div>
         </div>
       </section>
-    </>
+    </div>
   );
 };
 
