@@ -18,6 +18,18 @@ const CustomerServicePage = () => {
            }}
          >Home</p> <p><FontAwesomeIcon style={{width:"30px"}} className=' font-style text-muted'  icon={faAngleRight} /> Customer Service</p>
       </section>
+      <section>
+        <div className="bg-grey  col-12 col-lg-5">
+          <div className="bg-red col-12 col-md-8 rounded p-3">
+            <h3 >Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum vel eos, eveniet ex ipsam totam ab animi nobis.</h3>
+          </div>
+          <div className="bg-red text-right rounded p-3">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Reiciendis quae enim odit ea dicta aspernatur nihil dolore,.</p>
+          </div>
+          <button type="button" class="btn btn-success">Success</button>
+          <div className=""></div>
+        </div>
+      </section>
     </>
   )
 }
