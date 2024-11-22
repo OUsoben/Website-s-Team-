@@ -5,7 +5,7 @@
 .button-like {
     color: white; /* Text color */ 
     border-radius: 10px; /* Optional: for rounded corners */
-    pointer-events: none; /* Disable all pointer events */
+    pointer-events: unset; /* Disable all pointer events */
     padding: 10px 20px; /* Adjust padding to match button style */
     font-size: 16px; /* Adjust font size */
     

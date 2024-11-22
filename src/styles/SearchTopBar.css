@@ -1,0 +1,148 @@
+/* Basic styling for the top bar and its components */
+.search-input {
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+}
+
+.recent-item {
+    display: flex;
+    gap: 5px;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #D9D9D9;
+    border: none;
+    color: black;
+    font-size: 13px;
+}
+
+.recent-item .remove-search {
+    cursor: pointer;
+    font-size: 16px;
+    color: #888;
+}
+
+.popular-items h5 {
+    font-weight: bold;
+}
+
+.popular-item {
+    text-align: center;
+    padding: 10px;
+}
+
+.popular-item p {
+    font-size: 14px;
+    margin-top: 5px;
+}
+
+/* Styling for the back button */
+.back-button {
+    background: none;
+    border: none;
+    font-size: 1.5em;
+    color: #333;
+    cursor: pointer;
+}
+
+/* Making the top bar responsive */
+@media (max-width: 768px) {
+    .popular-item {
+        margin-bottom: 20px;
+    }
+
+    .recent-item {
+        font-size: 14px;
+    }
+    .item-image {
+        width: 100%;
+        /* Make the image responsive */
+        height: 100px;
+        /* Set the static height you need */
+        object-fit: cover;
+        /* Ensures the image covers the area without distortion */
+        /* Optional, to match the 'rounded' class if you want */
+    }
+}
+
+.offcanvas.offcanvas-top {
+    min-height: 90%;
+    max-width: 100%;
+}
+
+.popular-item {
+    text-align: center;
+    padding: 10px;
+}
+
+.item-image {
+    width: 100%;
+    /* Make the image responsive */
+    height: 100%;
+    /* Set the static height you need */
+    object-fit: cover;
+    /* Ensures the image covers the area without distortion */
+    /* Optional, to match the 'rounded' class if you want */
+}
+
+.search-input {
+    padding-right: 40px;
+    /* Add padding to the right to make space for the icon */
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    /* Position the icon at the right end */
+    top: 30%;
+    /* Vertically center the icon */
+    transform: translateY(-50%);
+    /* Adjust the icon position to truly center it */
+    color: #888;
+    /* Optional: Change the icon color */
+    font-size: 18px;
+    /* Optional: Set the icon size */
+}
+
+.search-input-container {
+    position: relative;
+    /* Make the input container position relative */
+    width: 100%;
+    /* Make sure it takes up the full width */
+}
+
+.search-input {
+    width: 100%;
+    /* Full width */
+    padding: 10px;
+    /* Adjust padding for spacing */
+    font-size: 14px;
+    /* Adjust text size */
+    border: none;
+    /* Remove all borders */
+    border-bottom: 1px solid #888;
+    /* Add a bottom border with color */
+    outline: none;
+    /* Remove outline on focus */
+    border-radius: 0;
+    /* Remove rounded corners */
+}
+
+.search-input:focus {
+    border-bottom: 1px solid #000;
+    /* Darker bottom border on focus */
+}
+
+.search-icon {
+    position: absolute;
+    right: 10px;
+    /* 10px from the right edge */
+    top: 47%;
+    /* Vertically center the icon */
+    transform: translateY(-50%);
+    /* Adjust vertical position */
+    font-size: 18px;
+    /* Adjust icon size */
+    color: #888;
+    /* Optional: icon color */
+}

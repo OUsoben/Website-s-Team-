@@ -1,0 +1,28 @@
+/* ShoppingCartStyle.css */
+
+.cart-button {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+.cart-summary p {
+  margin: 0;
+  padding: 5px 0;
+}
+
+.cart-summary .w-100 {
+  margin-top: 10px;
+}
+
+.image-container-shopping-cart {
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+}
+
+.image-container-shopping-cart img {
+  object-fit: cover;
+  width: 100%;
+  height: 100%;
+}

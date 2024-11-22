@@ -1,3 +1,19 @@
 *{
     font-family: "Montserrat", sans-serif;
 }
+.or-container {
+    display: flex;
+    align-items: center;
+    text-align: center;
+  }
+  
+  .or-line {
+    flex: 1;
+    border-bottom: 1px solid #000;
+    margin: 0 10px;
+  }
+  
+  .or {
+    white-space: nowrap;
+  }
+  

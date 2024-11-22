@@ -17,6 +17,8 @@ import TermsConditionsPage from './pages/TermsConditionsPage';
 import NotFoundPage from './pages/NotFoundPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import ShoppingCart from './components/ShoppingCart';
+
 
 
 function App() {
@@ -25,6 +27,7 @@ function App() {
 
          <BrowserRouter >
             <Header />
+          
             <ResponsiveNavbar />
             <Routes>
                <Route path="/" index element={<HomePage />} />
@@ -40,6 +43,7 @@ function App() {
                <Route path='/termsconditions' element={<TermsConditionsPage />} />
                <Route path='*' element={<NotFoundPage />} />
             </Routes>
+            <ShoppingCart/>
             <Footer />
          </BrowserRouter>
       </>

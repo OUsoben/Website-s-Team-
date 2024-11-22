@@ -6,3 +6,35 @@
     padding: 20px;
     background-color: blue;
 }
+.underline-us {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .underline-us::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    width: calc(100% - 4px ); /* Adjust to leave space for the dot */
+    height: 3px; /* Adjust the thickness of the underline */
+    bottom: -2px; /* Adjust the position of the underline */
+    left: 0;
+    top: 120%;
+    background-color: orange; /* Adjust the color of the underline */
+    visibility: visible;
+    transform: scaleX(1);
+    transition: all 0.3s ease-in-out;
+  }
+  
+  .underline-us::before {
+    content: ' • '; /* Dot character */
+    position: absolute;
+    left: 100%; /* Position the dot at the end of the underline */
+    top: 94%;
+ /* Adjust to align with the underline */
+    font-size: 20px; /* Size of the dot */
+  }
+  li{
+    padding-top: 7px;
+    padding-bottom:7px ;
+  }
