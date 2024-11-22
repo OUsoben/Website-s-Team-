@@ -62,6 +62,9 @@ const ResponsiveNavbar = () => {
               className="fs-5 pe-3 d-md-block d-md-none"
               color="white"
               icon={faMagnifyingGlass}
+              onClick={()=>{
+                setShowShoppingCart(true);
+          }}
             />
             <img className="d-md-block d-md-none me-3" style={{height:"20px",borderRadius:"50%"}} src="https://cdn.countryflags.com/thumbs/united-kingdom/flag-square-250.png" alt="" />
 
