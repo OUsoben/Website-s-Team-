@@ -1,3 +1,37 @@
 *{
     font-family: "Montserrat", sans-serif;
 }
+
+.category-image {
+    width: 100%;
+    height: 400px; /* Set a static height */
+    overflow: hidden;
+    position: relative;
+
+    
+}
+.category-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the div without stretching */
+    display: block;
+    border-radius: 10px;
+}
+.hover-bg-primary:hover{
+    background-color:#0d6efd;
+    color: white;
+}
+.hover-bg-primary{
+    color: black;
+}
+.list-font{
+    font-family: "Roboto", serif;
+    font-weight: 400;
+    font-size: 16px;
+   
+}
+p{
+    font-family: "Roboto", serif;
+    font-weight: 400;
+
+}

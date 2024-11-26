@@ -23,7 +23,7 @@ const SignInPage = () => {
       </div>
       <div className="login-form">
 
-        <div className="welcome-back">Welcome back</div>
+        <div className="welcome-back text-primary">Welcome back</div>
         <div className="description">
           Change your preferences, review and track orders, get service and more.
         </div>

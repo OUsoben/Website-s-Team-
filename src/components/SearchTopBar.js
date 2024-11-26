@@ -13,7 +13,7 @@ const TopBar = ({ShowSearchModal,handleCloseSearchForm}) => {
   return (
     <div >
       <Offcanvas show={ShowSearchModal} onHide={handleCloseSearch}  placement="top">
-        <div style={{}} className="d-flex justify-content-between align-items-center px-4 ">
+        <div className="d-flex justify-content-between align-items-center px-4 ">
           <Button variant="link" className="back-button" onClick={handleCloseSearch}>
             <FontAwesomeIcon style={{ fontSize: "15px" }} icon={faArrowLeft} />
           </Button >

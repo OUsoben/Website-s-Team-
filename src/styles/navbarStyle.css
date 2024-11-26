@@ -1,11 +1,21 @@
 .navbar-toggler {
     border: none;
 }
+.custom-toggler .navbar-toggler-icon {
+  color: white;
+}
 .navbar-toggler-icon{
-    font-size: small;
-    font-weight: bold;
-    background-color: #fff;
-    color: white;
+  font-size: small;
+}
+.custom-toggler .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;charset=utf8,%3Csvg viewBox='0 0 30 30' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath stroke='rgba%28255, 255, 255, 1%29' stroke-width='2' stroke-linecap='round' stroke-miterlimit='10' d='M4 7h22M4 15h22M4 23h22'/%3E%3C/svg%3E");
+}
+.navbar-toggler-icon{
+  background-image: url("https://i.pinimg.com/originals/26/9d/d1/269dd16fa1f5ff51accd09e7e1602267.png");
+}
+
+.custom-toggler .navbar-toggler {
+  border-color: rgba(255, 255, 255, 0.5);
 }
 btn-close{
     color: white;
@@ -21,8 +31,11 @@ btn-close{
 }
 /* Default styles for Navbar */
 .navbar {
-    font-family: DM Sans, sans-serif;
+    font-family: "Roboto", serif;
     background-color: #2B1DF0 ; /* Primary blue color */
+  }
+  .nav-bar{
+    font-family: "Roboto", serif;
   }
   @media (max-width: 990px) {
     .navbar-dark {
@@ -38,5 +51,22 @@ btn-close{
     color: white;
   }
   .bg-hover:hover {
-      background-color: #433878;
+      color: orange;
   }
+  .icon-container {
+    position: relative;
+    display: inline-block;
+  }
+  
+  .notification-badge {
+    position: absolute;
+    top: -10px;
+    right: 10px;
+    background-color: red;
+    color: white;
+    border-radius: 50%;
+    padding: 2px 6px;
+    font-size: 0.75rem;
+  }
+  
+  

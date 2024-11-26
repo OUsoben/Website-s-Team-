@@ -1,0 +1,43 @@
+.placeholder-card {
+    border-radius: 0;
+    margin: 1px;
+    cursor: pointer;
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    text-align: start;
+  }
+  
+  .placeholder-image {
+    background-color: #e0e0e0;
+    width: 100%;
+    height: 220px;
+  }
+  
+  .placeholder-title {
+    background-color: #e0e0e0;
+    height: 1rem;
+    width: 60%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .placeholder-text {
+    background-color: #e0e0e0;
+    height: 1rem;
+    width: 40%;
+    margin-bottom: 0.5rem;
+  }
+  
+  .circle-button {
+    background-color: transparent;
+    border: 2px solid;
+    border-radius: 50%;
+    padding: 10px;
+    width: 35px;
+    height: 35px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: black ;
+    font-size: 12px;
+  }

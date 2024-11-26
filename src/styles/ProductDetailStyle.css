@@ -1,0 +1,37 @@
+.details-product {
+    & h1 {
+        font-family: "Roboto", serif;
+        font-weight: 300;
+        font-style: normal;
+      color: #666361;
+    }
+    & h3{
+      font-family: "Roboto", serif;
+    }
+    & p {
+       color: rgba(21, 21, 230, 0.687);
+    }
+    & .product-info {
+      
+      & button{
+          padding: 10px 25px;
+          border-radius: 30px;
+      }
+    }
+  
+   /* reset the style of the image 
+   in the carousel */
+  
+    
+  
+  & img {
+    cursor: pointer;
+  }
+  
+  
+  }
+  .text-muted-h1{
+    color: #7d746c;
+    font-weight: 100;
+    
+  }

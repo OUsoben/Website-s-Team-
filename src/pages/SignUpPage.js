@@ -25,7 +25,9 @@ const SignUpPage = () => {
         <div className="login-form">
 
           <div className="welcome-back text-primary">Create Account</div>
-      
+          <div className="description">
+          Change your preferences, review and track orders, get service and more.
+        </div>
           <form>
             <div className="form-group d-flex gap-3">
               <input type="text" className="form-control" placeholder="First Name" />

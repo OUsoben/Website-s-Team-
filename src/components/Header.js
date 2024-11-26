@@ -42,11 +42,11 @@ const Header = () => {
                 </div>
                 <div className="col-xxl-2 p-2 col-xl-3 ps-lg-3 col-lg-3 col-4 ">
                      <div className="d-flex gap-4 pt-2 justify-content-center">
-                        <div  className='fs-5 click-cursor '> <FontAwesomeIcon className='' icon={faGlobe} /> <span className='side-left-font'>English</span> </div> 
+                        <div  className='fs-5 click-cursor '> <FontAwesomeIcon className='' icon={faGlobe} /> <span className='list-font'>English</span> </div> 
                         <div className='fs-5 click-cursor'  onClick={()=>{
                              // navigate to sign in page
                              navigate("/signin");
-                         }}> <FontAwesomeIcon className='' icon={faUserCircle} /> <span style={{color:"blue"}}  className=' side-left-font'>Sign in</span></div>
+                         }}> <FontAwesomeIcon className='' icon={faUserCircle} /> <span style={{color:"blue"}}  className=' list-font'>Sign in</span></div>
                      </div>
                 </div>
             </section>

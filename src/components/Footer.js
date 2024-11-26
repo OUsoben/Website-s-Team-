@@ -13,52 +13,52 @@ const Footer = () => {
                 <div className="row justify-content-center pt-3 ">
                     <div className="col-xl-3 pt-4 ">
                         <h5 className='cambo-font'>CamboShop</h5>
-                        <p className='pt-4 des-font'>
+                        <p className='pt-4 list-font'>
                             Welcome to MarketShop, your go-to source for quality products and excellent customer service.
                         </p>
                     </div>
                     <div className="col-xl-2 pt-4 font-top ">
                         <p className=''>ABOUT CAMBOSHOP </p>
                         <div className='d-flex flex-column gap-2 pt-3'>
-                            <a className='text-white text-decoration-none des-font' role="button" onClick={() => navigate("/blogs")}>Blog</a>
-                            <a className='text-white text-decoration-none des-font' role="button" onClick={() => navigate("/aboutus")}>About Us</a>
-                            <a className='text-white text-decoration-none des-font' role="button" onClick={() => navigate("/privacypolicy")}>Privacy Policy</a>
-                            <a className='text-white text-decoration-none des-font' role="button" onClick={() => navigate("/termsconditions")}>Terms to Use</a>
-                            <a className='text-white text-decoration-none des-font' role="button" onClick={() => navigate("/contactus")}>Contact Us</a>
+                            <a className='text-white text-decoration-none list-font' role="button" onClick={() => navigate("/blogs")}>Blog</a>
+                            <a className='text-white text-decoration-none list-font' role="button" onClick={() => navigate("/aboutus")}>About Us</a>
+                            <a className='text-white text-decoration-none list-font' role="button" onClick={() => navigate("/privacypolicy")}>Privacy Policy</a>
+                            <a className='text-white text-decoration-none list-font' role="button" onClick={() => navigate("/termsconditions")}>Terms to Use</a>
+                            <a className='text-white text-decoration-none list-font' role="button" onClick={() => navigate("/contactus")}>Contact Us</a>
                         </div>
                     </div>
                     <div className="col-xl-3 pt-4 ">
 
                         <p className='font-top'>OUR CONTACT</p>
                         <div className=''>
-                            <p className='pt-3 des-font'>
+                            <p className='pt-3 list-font'>
                                 <FontAwesomeIcon className='pe-2 ' icon={faLocationDot} />
                                 123 Market Street, Suite 100, Market City, MC 12345
                             </p>
-                            <p className='des-font'>
+                            <p className='list-font'>
                                 <FontAwesomeIcon icon={faPhone} /> (+855) 95-000-190
                             </p>
-                            <a className='text-white text-decoration-none des-font' href="mailto:Camboshop@gmail.com">
+                            <a className='text-white text-decoration-none list-font' href="mailto:Camboshop@gmail.com">
                                 <FontAwesomeIcon className='pe-2' icon={faEnvelope} />
                                 camboshop@gmail.com
                             </a>
-                            <p className='pt-3 des-font'>
+                            <p className='pt-3 list-font'>
                                 <FontAwesomeIcon className='pe-2' icon={faClock} /> Monday — Friday <br /> <span className='ps-4'>8:00am - 6:00pm</span>
                             </p>
                         </div>
                     </div>
                     <div className="col-xl-2  ps-xl-5 d-flex flex-column ">
                     <p className='mt-4 font-top '>FOLLOW US</p>
-                    <a className='des-font text-white text-decoration-none'>
+                    <a className='list-font text-white text-decoration-none'>
                     <FontAwesomeIcon icon={faFacebook} /> Facebook
                             </a>
-                            <a className='des-font text-white  text-decoration-none pt-1'>
+                            <a className='list-font text-white  text-decoration-none pt-1'>
                             <FontAwesomeIcon icon={faSquareInstagram} /> Instagram
                             </a>
-                            <a className='des-font text-white  text-decoration-none pt-1'>
+                            <a className='list-font text-white  text-decoration-none pt-1'>
                             <FontAwesomeIcon icon={faYoutube} /> Youtube
                             </a>
-                            <a className='des-font text-white  text-decoration-none pt-1'>
+                            <a className='list-font text-white  text-decoration-none pt-1'>
                             <FontAwesomeIcon icon={faTelegram} />  Telegram
                             </a>
                     </div>
@@ -125,7 +125,7 @@ const Footer = () => {
                    
                 </div>
                 <hr className='mt-5' />
-                <p className=" text-center  mb-0 des-font">
+                <p className=" text-center  mb-0 list-font">
                     © 2024 CamboShop  <span className='px-1 '> | </span>  All Rights Reserved.
                 </p>
             </section>

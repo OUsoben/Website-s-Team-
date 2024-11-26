@@ -18,6 +18,7 @@ import NotFoundPage from './pages/NotFoundPage';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import ShoppingCart from './components/ShoppingCart';
+import ProductDetails from './pages/ProductDetails';
 
 
 
@@ -27,7 +28,7 @@ function App() {
 
          <BrowserRouter >
             <Header />
-          
+           
             <ResponsiveNavbar />
             <Routes>
                <Route path="/" index element={<HomePage />} />
@@ -41,6 +42,7 @@ function App() {
                <Route path='/contactus' element={<ContactPage />} />
                <Route path='/privacypolicy' element={<PrivacyPolicyPage />} />
                <Route path='/termsconditions' element={<TermsConditionsPage />} />
+               <Route path='products/:id' element={<ProductDetails />} />
                <Route path='*' element={<NotFoundPage />} />
             </Routes>
             <ShoppingCart/>
