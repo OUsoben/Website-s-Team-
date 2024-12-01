@@ -30,7 +30,7 @@ const Header = () => {
                     <input
                     style={{cursor: "pointer"}}
                         type="text"
-                        class="form-control button-like"
+                        class="form-control  button-like"
                         placeholder="Search Product ..."
                         aria-label="Username"
                         aria-describedby=""

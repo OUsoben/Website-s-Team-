@@ -60,7 +60,9 @@
 
 
           <Container fluid>
+            
             <Navbar.Toggle aria-controls="offcanvasNavbar" />
+            
             <Navbar.Offcanvas 
               style={offcanvasStyle}
               id="offcanvasNavbar"
@@ -69,8 +71,13 @@
               className="navbar-dark " // Add this class to apply dark theme on small screens
             >
               <Offcanvas.Header  closeButton>
-                <Offcanvas.Title id="offcanvasNavbarLabel">CamboShop</Offcanvas.Title>
+                <Offcanvas.Title id="offcanvasNavbarLabel">
+       
+      <img style={{width:"50px"}} src={require("../images/camboshoplogo1.png")} alt="" />
+      
+                </Offcanvas.Title>
               </Offcanvas.Header>
+              
               <Offcanvas.Body>
                 <Nav className="col-11 mx-xl-auto">
                   {/* Primary Navigation Links */}
@@ -78,11 +85,11 @@
                     <FontAwesomeIcon className='pe-3  ' icon={faBars} />
                     All Categories
                   </NavLink>
-                  <NavLink className="text-white nav-bar nav-link px-xxl-4 py-4 bg-hover" to="/">Home</NavLink>
-                  <NavLink className="text-white nav-bar nav-link px-xxl-4 py-4 bg-hover" to="/blogs">Blog</NavLink>
-                  <NavLink className="text-white nav-bar nav-link px-xxl-4 py-4 bg-hover" to="/categories">Categories</NavLink>
-                  <NavLink className="text-white nav-bar nav-link px-xxl-4 py-4 bg-hover" to="/services">Customer Service</NavLink>
-                  <NavLink className="text-white nav-bar nav-link px-xxl-4 py-4 bg-hover" to="/dashboard">Dashboard</NavLink>
+                  <NavLink className="text-white nav-bar nav-link px-lg-3 px-xxl-4  py-lg-4 bg-hover py-3" to="/">Home</NavLink>
+                  <NavLink className="text-white nav-bar nav-link px-lg-3 px-xxl-4  py-lg-4 bg-hover py-3" to="/blogs">Blog</NavLink>
+                  <NavLink className="text-white nav-bar nav-link px-lg-3 px-xxl-4  py-lg-4 bg-hover py-3" to="/categories">Categories</NavLink>
+                  <NavLink className="text-white nav-bar nav-link px-lg-3 px-xxl-4  py-lg-4 bg-hover py-3" to="/services">Customer Service</NavLink>
+                  <NavLink className="text-white nav-bar nav-link px-lg-3 px-xxl-4  py-lg-4 bg-hover py-3" to="/admin/products">Dashboard</NavLink>
                 </Nav>
                 <div className='d-lg-block d-lg-none mt-5 d-flex justify-content-center gap-3'>
                 <button className='btn btn-primary rounded-pill px-4'
@@ -108,8 +115,9 @@
                     </div>
                   </div>
             </Navbar.Offcanvas>
-            <a style={{ fontSize: "20px" }} class="navbar-brand text-white text-center combo-shop d-md-block d-md-none  ms-3" >CamboShop</a>
-
+          
+    
+      
             <div className="d-flex me-xl-5 pt-3 pb-3">
               <FontAwesomeIcon className="fs-5 pe-3 d-none d-md-inline" color="white" icon={faBell} />
               <FontAwesomeIcon className="fs-5 pe-3 d-none d-md-inline" color="white" icon={faHeart} />

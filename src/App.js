@@ -1,6 +1,6 @@
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import 'react-toastify/dist/ReactToastify.css';
 import ResponsiveNavbar from './components/ResponsiveNavbar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import HomePage from './pages/HomePage';
@@ -19,6 +19,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import ShoppingCart from './components/ShoppingCart';
 import ProductDetails from './pages/ProductDetails';
+import { ToastContainer } from 'react-toastify';
+
 
 
 
@@ -35,7 +37,7 @@ function App() {
                <Route path='/blogs' element={<BlogPage />} />
                <Route path='/services' element={<CustomerServicePage />} />
                <Route path='/categories' element={<CategoryPage />} />
-               <Route path='/dashboard' element={<DashboardPage />} />
+               <Route path='/admin/products' element={<DashboardPage />} />
                <Route path='/aboutus' element={<AboutUsPage />} />
                <Route path='/signin' element={<SignInPage />} />
                <Route path='/signup' element={<SignUpPage />} />
@@ -47,6 +49,7 @@ function App() {
             </Routes>
             <ShoppingCart/>
             <Footer />
+            <ToastContainer/>
          </BrowserRouter>
       </>
    );

@@ -150,7 +150,7 @@ const HomePage = () => {
       rating: 5
     },
     {
-      image: "https://cameratrader.ng/wp-content/uploads/2023/08/DJI-Mini-3-Pro-Drone-with-RC-Remote-Controller.jpeg",
+      image: "https://dji-retail.co.uk/cdn/shop/files/DJI-Mini-4-Pro-Drone-Fly-More-Combo-With-RC2-Controller-13.webp?v=1720307338&width=1280",
       title: "Drone",
       price: 1499.99,
       description: "A stylish and versatile drone that is perfect for hiking, exploring, or foraging.",
@@ -184,7 +184,7 @@ const HomePage = () => {
   ]
   const recentlyViewedList = [
     {
-      image: "https://cameratrader.ng/wp-content/uploads/2023/08/DJI-Mini-3-Pro-Drone-with-RC-Remote-Controller.jpeg",
+      image: "https://dji-retail.co.uk/cdn/shop/files/DJI-Mini-4-Pro-Drone-Fly-More-Combo-With-RC2-Controller-13.webp?v=1720307338&width=1280",
       title: "Drone",
       price: 1499.99,
       description: "A stylish and versatile drone that is perfect for hiking, exploring, or foraging.",
