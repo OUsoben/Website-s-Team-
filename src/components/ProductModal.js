@@ -55,18 +55,18 @@ const ProductModal = ({ showModal, handleCloseProductForm }) => {
           console.log("Upload image is ",images)
         
           
-        //   CREATE_PRODUCT(product).then(
-        //     response => {
-        //       toast.success("Create Product successfully")
-        //       setIsLoading(false)
-        //     }
-        //   ).catch(
-        //     error => {
-        //       toast.error("Create Product failed")
-        //       console.log("Failed to creating new product", error)
-        //       setIsLoading(false)
-        //     }
-        //   )
+          CREATE_PRODUCT(product).then(
+            response => {
+              toast.success("Create Product successfully")
+              setIsLoading(false)
+            }
+          ).catch(
+            error => {
+              toast.error("Create Product failed")
+              console.log("Failed to creating new product", error)
+              setIsLoading(false)
+            }
+          )
         
          }
 
