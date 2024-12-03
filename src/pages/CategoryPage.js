@@ -7,6 +7,7 @@ import { GET_ALL_PRODUCTS } from '../services/productService';
 import '../styles/CategoryStyle.css';
 import PLaceHolderCard from '../components/PLaceHolderCard';
 import ReactPaginate from 'react-paginate';
+import { useMediaQuery } from 'react-responsive';
 
 const CategoryPage = () => {
   const [products, setProducts] = useState([]);
@@ -18,12 +19,12 @@ const CategoryPage = () => {
     GET_ALL_PRODUCTS()
       .then(
         data => {
-        const filteredProducts = data.filter((p)=> p.category.id == 1 ) 
-     
-        setProducts(data.sort((a, b) => b.id - a.id)); // Sorting products
-      
-        setIsLoading(false);
-      })
+          const filteredProducts = data.filter((p) => p.category.id == 1)
+
+          setProducts(data.sort((a, b) => b.id - a.id)); // Sorting products
+
+          setIsLoading(false);
+        })
       .catch((error) => {
         console.log('Error:', error);
         setIsLoading(false); // Ensure loading is turned off even when there's an error
@@ -50,6 +51,17 @@ const CategoryPage = () => {
 
   const totalPages = Math.ceil(products.length / itemsPerPage);
   const displayedProducts = products.slice(currentPage * itemsPerPage, (currentPage + 1) * itemsPerPage);
+
+  const isSmallScreen = useMediaQuery({ query: '(max-width: 768px)' });
+  const [pageRangeDisplayed, setPageRangeDisplayed] = useState(2);
+
+  useEffect(() => {
+    if (isSmallScreen) {
+      setPageRangeDisplayed(2);
+    } else {
+      setPageRangeDisplayed(5);
+    }
+  }, [isSmallScreen]);
 
   return (
     <>
@@ -116,7 +128,7 @@ const CategoryPage = () => {
                   <p>
                     We apologize, but there are currently no products available to show at this time.
                     Please check back later or contact our customer service team for more information.
-                      Thank you for your understanding and patience.
+                    Thank you for your understanding and patience.
                   </p>
                   <img
                     className="img-fluid"
@@ -133,25 +145,26 @@ const CategoryPage = () => {
                   </div>
                 ))}
 
-                <div className="d-flex justify-content-center   py-3">
+                <div className="d-flex justify-content-center px-2 py-3">
                   <ReactPaginate
                     previousLabel={'Previous'}
                     nextLabel={'Next'}
                     breakLabel={'...'}
                     pageCount={totalPages}
                     marginPagesDisplayed={2}
-                    pageRangeDisplayed={3}
+                    pageRangeDisplayed={pageRangeDisplayed}
                     onPageChange={handlePageChange}
                     containerClassName={'pagination'}
                     pageClassName={'page-item'}
                     pageLinkClassName={'page-link'}
                     previousClassName={'page-item'}
                     previousLinkClassName={'page-link'}
-                    nextClassName={'page-item '}
+                    nextClassName={'page-item'}
                     nextLinkClassName={'page-link'}
                     breakClassName={'page-item'}
                     breakLinkClassName={'page-link'}
-                    activeClassName={'active '} />
+                    activeClassName={'active'}
+                  />
                 </div>
               </>
             )}
