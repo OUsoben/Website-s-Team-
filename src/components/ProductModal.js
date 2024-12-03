@@ -53,8 +53,7 @@ const ProductModal = ({ showModal, handleCloseProductForm }) => {
           product.images = images
 
           console.log("Upload image is ",images)
-        
-          
+            
           CREATE_PRODUCT(product).then(
             response => {
               toast.success("Create Product successfully")
