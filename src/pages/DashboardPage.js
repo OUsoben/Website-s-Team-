@@ -20,9 +20,10 @@ const DashboardPage = () => {
   useEffect(() => {
     GET_ALL_PRODUCTS().then(
       response => {
-        let sortedProducts = response.sort((a, b) => b.id - a.id)
+        const filteredProducts = response.filter((p)=> p.category.id == 1 ) 
+        const  sortedProducts = response.sort((a, b) => b.id - a.id)
 
-        setProducts(sortedProducts)
+        setProducts(response)
         // setSelectedProduct(sortedProducts[0])
         setLoading(false)
       }

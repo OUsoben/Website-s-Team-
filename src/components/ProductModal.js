@@ -6,6 +6,7 @@ import { faBan, faCirclePlus, faPlus, faSquarePlus } from '@fortawesome/free-sol
 import { CREATE_PRODUCT } from '../services/productService';
 import { Oval, RotatingLines, ThreeDots } from 'react-loader-spinner';
 import { toast } from 'react-toastify';
+import { UPLOAD_FILE } from '../services/fileService';
 
 
 const ProductModal = ({ showModal, handleCloseProductForm }) => {
@@ -13,7 +14,7 @@ const ProductModal = ({ showModal, handleCloseProductForm }) => {
   const [title, setTitle] = useState("");
   const [description, setDescription] = useState("");
   const [price, setPrices] = useState(0);
-  const [categoryId, setCategoryId] = useState(31);
+  const [categoryId, setCategoryId] = useState(1);
   const [images, setImages] = useState([]);
   const [selectedFile, setSelectedFiles] = useState(null);
   const [selectedImages, setSelectedImages] = useState(null);
@@ -31,12 +32,55 @@ const ProductModal = ({ showModal, handleCloseProductForm }) => {
       "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGh5WFH8TOIfRKxUrIgJZoDCs1yvQ4hIcppw&s"
     ]
   }
+  console.log(product)
 
   const handleCreateNewProduct = () => {
     setIsLoading(true)
-    CREATE_PRODUCT(product).then(
+
+    if(selectedFile){
+    //   // upload file to the server
+    //   // create new product
+  alert("Uploading new product")
+      let file = new FormData()
+      file.append('file', selectedFile)
+
+      UPLOAD_FILE(file).then(
+        response =>{  
+
+          setImages([])
+          setImages(images.push(response.location))
+          
+          product.images = images
+
+          console.log("Upload image is ",images)
+        
+          
+        //   CREATE_PRODUCT(product).then(
+        //     response => {
+        //       toast.success("Create Product successfully")
+        //       setIsLoading(false)
+        //     }
+        //   ).catch(
+        //     error => {
+        //       toast.error("Create Product failed")
+        //       console.log("Failed to creating new product", error)
+        //       setIsLoading(false)
+        //     }
+        //   )
+        
+         }
+
+      ).catch(
+        error => {
+          console.log("Error uploading file", error)
+          toast.error("failed to uplaod file !")
+        }
+      )
+
+    }
+    else {
+       CREATE_PRODUCT(product).then(
       response => {
-        console.log("New Product created", response)
         toast.success("Create Product successfully")
         setIsLoading(false)
       }
@@ -48,6 +92,10 @@ const ProductModal = ({ showModal, handleCloseProductForm }) => {
       }
     )
   }
+}
+
+
+   
   const handleImageChange = (e) => {
 
         setSelectedFiles(e.target.files[0]);

@@ -16,8 +16,12 @@ const CategoryPage = () => {
 
   useEffect(() => {
     GET_ALL_PRODUCTS()
-      .then((data) => {
+      .then(
+        data => {
+        const filteredProducts = data.filter((p)=> p.category.id == 1 ) 
+     
         setProducts(data.sort((a, b) => b.id - a.id)); // Sorting products
+      
         setIsLoading(false);
       })
       .catch((error) => {
@@ -108,11 +112,11 @@ const CategoryPage = () => {
               // Display no product found message
               <div className="d-flex justify-content-lg-center align-items-center text-center text-start container mt-5">
                 <div className="col-12 col-xxl-7 pt-5">
-                  <h2>There is no product to show</h2>
+                  <h2>There are no product to display</h2>
                   <p>
                     We apologize, but there are currently no products available to show at this time.
                     Please check back later or contact our customer service team for more information.
-                    Thank you for your understanding and patience.
+                      Thank you for your understanding and patience.
                   </p>
                   <img
                     className="img-fluid"
@@ -136,7 +140,7 @@ const CategoryPage = () => {
                     breakLabel={'...'}
                     pageCount={totalPages}
                     marginPagesDisplayed={2}
-                    pageRangeDisplayed={5}
+                    pageRangeDisplayed={3}
                     onPageChange={handlePageChange}
                     containerClassName={'pagination'}
                     pageClassName={'page-item'}
