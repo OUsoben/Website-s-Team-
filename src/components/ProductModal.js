@@ -1,21 +1,21 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import Button from "react-bootstrap/Button";
 import Modal from "react-bootstrap/Modal";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBan, faCirclePlus, faPlus, faSquarePlus } from '@fortawesome/free-solid-svg-icons';
-import { CREATE_PRODUCT } from '../services/productService';
+import { CREATE_PRODUCT, UPDATE_PRODUCT_BY_ID } from '../services/productService';
 import { Oval, RotatingLines, ThreeDots } from 'react-loader-spinner';
 import { toast } from 'react-toastify';
 import { UPLOAD_FILE } from '../services/fileService';
 
 
-const ProductModal = ({ showModal, handleCloseProductForm }) => {
+const ProductModal = ({updatedProduct, showModal, handleCloseProductForm }) => {
 
-  const [title, setTitle] = useState("");
-  const [description, setDescription] = useState("");
-  const [price, setPrices] = useState(0);
-  const [categoryId, setCategoryId] = useState(1);
-  const [images, setImages] = useState([]);
+  const [title, setTitle] = useState(updatedProduct ? updatedProduct.title : "");
+  const [description, setDescription] = useState(updatedProduct ? updatedProduct.description : "");
+  const [price, setPrices] = useState(updatedProduct ? updatedProduct.price : 0);
+  const [categoryId, setCategoryId] = useState(updatedProduct ? updatedProduct.categoryId : 1);
+  const [images, setImages] = useState(updatedProduct ? updatedProduct.images:"https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGh5WFH8TOIfRKxUrIgJZoDCs1yvQ4hIcppw&s");
   const [selectedFile, setSelectedFiles] = useState(null);
   const [selectedImages, setSelectedImages] = useState(null);
 
@@ -23,95 +23,157 @@ const ProductModal = ({ showModal, handleCloseProductForm }) => {
 
 
 
+   useEffect(()=>{
+
+    setTitle (updatedProduct ? updatedProduct.title : "")
+    setDescription (updatedProduct ? updatedProduct.description : "")
+    setPrices (updatedProduct ? updatedProduct.price : 0)
+    setImages(updatedProduct ? updatedProduct.images :[])
+    setSelectedImages (updatedProduct ? updatedProduct.images[0] : "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGh5WFH8TOIfRKxUrIgJZoDCs1yvQ4hIcppw&s")
+    setCategoryId (updatedProduct? updatedProduct.categoryId : 1)
+    
+   },[updatedProduct])
+
   let product = {
     title,
     price,
     description,
     categoryId,
-    images: [
-      "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGh5WFH8TOIfRKxUrIgJZoDCs1yvQ4hIcppw&s"
-    ]
+    images: ["https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRGh5WFH8TOIfRKxUrIgJZoDCs1yvQ4hIcppw&s"]
+     
+    
   }
-  console.log(product)
+
 
   const handleCreateNewProduct = () => {
-    setIsLoading(true)
+    setIsLoading(true);
 
-    if(selectedFile){
-    //   // upload file to the server
-    //   // create new product
-  alert("Uploading new product")
-      let file = new FormData()
-      file.append('file', selectedFile)
+    // If updating an existing product
+    if (updatedProduct) {
+        if (selectedFile) {
+            let file = new FormData();
+            file.append('file', selectedFile);
 
-      UPLOAD_FILE(file).then(
-        response =>{  
+            UPLOAD_FILE(file).then(
+                response => {
+                    // Assuming response contains the image URL at response.location
+                    const uploadedImageUrl = response.location;
 
-          setImages([])
-          setImages(images.push(response.location))
-          
-          product.images = images
+                    // Update images with the new image URL
+                    setImages([uploadedImageUrl]);
+                    product.images = [uploadedImageUrl];  // Update product images
 
-          console.log("Upload image is ",images)
-            
-          CREATE_PRODUCT(product).then(
-            response => {
-              toast.success("Create Product successfully")
-              setIsLoading(false)
-            }
-          ).catch(
-            error => {
-              toast.error("Create Product failed")
-              console.log("Failed to creating new product", error)
-              setIsLoading(false)
-            }
-          )
-        
-         }
+                    // Update product on the backend
+                    UPDATE_PRODUCT_BY_ID(updatedProduct.id, product).then(
+                        response => {
+                            toast.success("Product updated successfully");
+                            setIsLoading(false);
+                            handleCloseProductForm();
+                        }
+                    ).catch(error => {
+                        toast.error("Failed to update product");
+                        console.log("Failed to update product", error);
+                        setIsLoading(false);
+                    });
+                }
+            ).catch(error => {
+                console.log("Error uploading file", error);
+                toast.error("Failed to upload file!");
+                setIsLoading(false);
+            });
+        } else {
+            // If no new image, keep existing product images
+            product.images = updatedProduct.images;
 
-      ).catch(
-        error => {
-          console.log("Error uploading file", error)
-          toast.error("failed to uplaod file !")
+            // Update product on the backend
+            UPDATE_PRODUCT_BY_ID(updatedProduct.id, product).then(
+                response => {
+                    toast.success("Product updated successfully");
+                    setIsLoading(false);
+                    handleCloseProductForm();
+                }
+            ).catch(error => {
+                toast.error("Failed to update product");
+                console.log("Failed to update product", error);
+                setIsLoading(false);
+            });
         }
-      )
 
+    } else {
+        // Creating a new product
+        if (selectedFile) {
+            let file = new FormData();
+            file.append('file', selectedFile);
+
+            UPLOAD_FILE(file).then(
+                response => {
+                    const uploadedImageUrl = response.location;
+
+                    // Set the new image URL
+                    setImages([uploadedImageUrl]);
+                    product.images = [uploadedImageUrl];
+
+                    // Create product on the backend
+                    CREATE_PRODUCT(product).then(
+                        response => {
+                            toast.success("Product created successfully");
+                            setIsLoading(false);
+                        }
+                    ).catch(error => {
+                        toast.error("Failed to create product");
+                        console.log("Failed to create product", error);
+                        setIsLoading(false);
+                    });
+                }
+            ).catch(error => {
+                console.log("Error uploading file", error);
+                toast.error("Failed to upload file!");
+                setIsLoading(false);
+            });
+        } else {
+            // Create product without image
+            CREATE_PRODUCT(product).then(
+                response => {
+                    toast.success("Product created successfully");
+                    setIsLoading(false);
+                }
+            ).catch(error => {
+                toast.error("Failed to create product");
+                console.log("Failed to create product", error);
+                setIsLoading(false);
+            });
+        }
     }
-    else {
-       CREATE_PRODUCT(product).then(
-      response => {
-        toast.success("Create Product successfully")
-        setIsLoading(false)
-      }
-    ).catch(
-      error => {
-        toast.error("Create Product failed")
-        console.log("Failed to creating new product", error)
-        setIsLoading(false)
-      }
-    )
-  }
-}
+};
 
 
    
   const handleImageChange = (e) => {
-
-        setSelectedFiles(e.target.files[0]);
-
-        let imageUrl = URL.createObjectURL(e.target.files[0])
-
-        setSelectedImages(imageUrl)
-    }
-      
+    setSelectedFiles(e.target.files[0]);
+  
+    let imageUrl = URL.createObjectURL(e.target.files[0]);
+  
+    setSelectedImages(imageUrl);
+  };
 
   const handleCloseProduct = () => {
     handleCloseProductForm(false)
   }
+
+
+  
+
   return (
     <Modal size="xl" show={showModal} onHide={handleCloseProduct} >
       <Modal.Header closeButton={false}>
-        <Modal.Title className="m-auto">Create New Product
+        <Modal.Title className="m-auto">
+          {updatedProduct ?
+          "Update Product Information" :
+          " Create New Product"
+          
+          }
+          
+         
         </Modal.Title>
       </Modal.Header>
       <Modal.Body>
@@ -174,6 +236,7 @@ const ProductModal = ({ showModal, handleCloseProductForm }) => {
                   class="form-control  bg-white"
                   id="floatingInput"
                   placeholder="Jonh Doe"
+                  value={title}
                   onChange={e => setTitle(e.target.value)}
                 />
                 <label for="floatingInput" className="input-label ">
@@ -187,6 +250,7 @@ const ProductModal = ({ showModal, handleCloseProductForm }) => {
                   type="number"
                   class="form-control bg-white"
                   id="floatingInput"
+                  value={price}
                   onChange={e => setPrices(e.target.value)}
                   placeholder="Jonh Doe"
 
@@ -205,6 +269,7 @@ const ProductModal = ({ showModal, handleCloseProductForm }) => {
                 type="text"
                 class="form-control bg-white"
                 id="floatingInput"
+                value={description}
                 onChange={e => setDescription(e.target.value)}
 
                 placeholder="name@example.com"
@@ -240,7 +305,13 @@ const ProductModal = ({ showModal, handleCloseProductForm }) => {
                 </>
                   : 
 
-                  "Create Product"
+                  <>
+                   {
+                    updatedProduct ?
+                    "Update" :
+                    "Create "
+                   }
+                  </>
                 
               }
 

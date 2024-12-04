@@ -10,7 +10,41 @@ import ProductDetailPlaceHolder from '../components/ProductDetailPlaceHolder';
 
 const ProductDetails = () => {
   const Relatedproducts = [
-    // Related products (same as your current data)
+    {
+      id : 1,
+      name :"Shoes",
+      price: 150,
+      image: "https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/i1-51980e99-7371-46ed-9932-60dfd565ebc3/WMNS+NIKE+AIR+MAX+EXCEE.png"
+    },
+    { id :2,
+      image:"https://static.nike.com/a/images/t_PDP_1280_v1/f_auto,q_auto:eco/05856ac7-0129-4395-bd6e-2fe2669025fb/custom-nike-dunk-low-by-you-su24.png",
+      name:"new nike ",
+      price: 100
+    }
+    ,{
+      id: 3,
+      name: "Nike shoes",
+      price: 120,
+      image: "https://static.nike.com/a/images/t_PDP_936_v1/f_auto,q_auto:eco/43bbab94-98c5-4b99-9306-84f39141c09a/NIKE+COURT+LEGACY+NN.png"
+    },
+    {
+      id:4,
+      image :"https://m.media-amazon.com/images/I/61Qe0euJJZL.jpg",
+      name: "New Leptop",
+      price: 1500
+    },
+    {
+      id: 5,
+      image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRMXJB4lZjVbfq7dZ_Jk8xbA20xnmvV0_gt2w&s",
+      name: "iphone 16",
+      price: 1000
+    },
+    {
+      id: 6,
+      image:"https://s3.ap-southeast-1.amazonaws.com/uploads-store/uploads/all/J64tF3CLIi4ZFOaS6wv3VTyLXdmLZ4qD0cJPrFet.png",
+      name: "Teblet",
+      price: 87
+    }
   ];
 
   const [product, setProduct] = useState(null);
@@ -23,10 +57,18 @@ const ProductDetails = () => {
       response => {
         console.log("Product By ID: ", response);
         setProduct(response);
-        // Set default selected image to the first image if available
-        if (response && response.images && Array.isArray(response.images) && response.images.length > 0) {
-          setSelectedImage(response.images[0]);
+        // Parse the images if they are stringified JSON
+        let images = response.images;
+        try {
+          images = JSON.parse(response.images[0]);
+        } catch (e) {
+          console.error("Error parsing product images:", e);
         }
+        // Set default selected image to the first image if available
+        if (images && images.length > 0) {
+          setSelectedImage(images[0]);
+        }
+        setProduct(prevProduct => ({ ...prevProduct, images }));
       }
     ).catch(
       error => {

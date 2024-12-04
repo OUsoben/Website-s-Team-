@@ -13,7 +13,7 @@ const CategoryPage = () => {
   const [products, setProducts] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [currentPage, setCurrentPage] = useState(0);
-  const itemsPerPage = 10;
+  const itemsPerPage = 30;
 
   useEffect(() => {
     GET_ALL_PRODUCTS()
@@ -21,7 +21,7 @@ const CategoryPage = () => {
         data => {
           const filteredProducts = data.filter((p) => p.category.id == 1)
 
-          setProducts(data.sort((a, b) => b.id - a.id)); // Sorting products
+          setProducts(filteredProducts.sort((a, b) => b.id - a.id)); // Sorting products
 
           setIsLoading(false);
         })
@@ -111,7 +111,7 @@ const CategoryPage = () => {
               <p className="list-font d-none d-sm-inline">
                 Sort by : Default sorting <FontAwesomeIcon icon={faChevronDown} />
               </p>
-              <p className="list-font ps-4">Show : 60 <FontAwesomeIcon icon={faChevronDown} /></p>
+              <p className="list-font ps-4">Show : 30 <FontAwesomeIcon icon={faChevronDown} /></p>
             </div>
           </div>
           <div className="row">
