@@ -20,6 +20,7 @@ import Footer from './components/Footer';
 import ShoppingCart from './components/ShoppingCart';
 import ProductDetails from './pages/ProductDetails';
 import { ToastContainer } from 'react-toastify';
+// import i18n from './i18n';
 
 
 

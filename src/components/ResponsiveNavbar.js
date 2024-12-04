@@ -9,7 +9,10 @@
   import ShoppingCart from './ShoppingCart';
   import SearchTopBar from './SearchTopBar';
   import { faFacebook, faLinkedin, faTelegram, faYoutube } from '@fortawesome/free-brands-svg-icons';
+  
+
   const ResponsiveNavbar = () => {
+  
 
 
     const [showShoppingCart, setShowShoppingCart] = useState(false)

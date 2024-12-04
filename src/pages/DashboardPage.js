@@ -113,6 +113,7 @@ const DashboardPage = () => {
   const handleCreateOrUpdateProduct = () => {
     // Refresh the product list after creating or updating
     setRefreashStatus(prevStatus => !prevStatus); // Toggle refreashStatus to trigger useEffect and refetch data
+    setShowProductModal(false); // Close the modal after update/creation
   };
 
   let navigate = useNavigate();
@@ -139,8 +140,8 @@ const DashboardPage = () => {
         <div className="container mb-5 bg-white rounded p-5">
           <h1>Product Dashboard</h1>
           <hr />
-          <div className="d-flex gap-4">
-            <div className="product-info col-3">
+          <div className="d-flex gap-4 flex-column flex-lg-row">
+            <div className="product-info col-12 col-lg-3  ">
               {loading ? (
                 <DashboardLoadingPlaceholder />
               ) : (
@@ -159,7 +160,7 @@ const DashboardPage = () => {
               )}
             </div>
 
-            <div className="data-table col-9">
+            <div className="data-table col-lg-9 col-12 order-2">
               {loading ? (
                 <DashboardLoadingPlaceholder />
               ) : (
@@ -176,7 +177,7 @@ const DashboardPage = () => {
                   data={filteredProduct}
                   onRowClicked={handleRowClicked}
                   subHeaderComponent={
-                    <div className='d-flex w-50 gap-4'>
+                    <div className='d-flex w-lg-50 w-sm-100 gap-4'>
                       <button className='btn btn-primary px-4'
                         onClick={() => {
                           setShowProductModal(true);
