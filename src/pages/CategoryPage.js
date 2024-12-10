@@ -21,7 +21,7 @@ const CategoryPage = () => {
         data => {
           const filteredProducts = data.filter((p) => p.category.id == 1)
 
-          setProducts(filteredProducts.sort((a, b) => b.id - a.id)); // Sorting products
+          setProducts(data.sort((a, b) => b.id - a.id)); // Sorting products
 
           setIsLoading(false);
         })

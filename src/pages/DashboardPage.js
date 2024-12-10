@@ -22,7 +22,7 @@ const DashboardPage = () => {
     // Fetch all products and filter by category (assuming category id is 1)
     GET_ALL_PRODUCTS().then(response => {
       const filteredProducts = response.filter((p) => p.category.id === 1);
-      setProducts(filteredProducts.sort((a, b) => b.id - a.id));
+      setProducts(response.sort((a, b) => b.id - a.id));
       setLoading(false);
     }).catch(error => {
       console.log("Error:", error);
